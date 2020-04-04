@@ -1,7 +1,7 @@
 {
-  "name": "express-auth",
+  "name": "diary-web-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Diary/Journal web app to add entries about the day",
   "main": "index.js",
   "scripts": {
     "watch": "nodemon --exec babel-node src/index.js",
