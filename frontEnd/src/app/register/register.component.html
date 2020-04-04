@@ -1,0 +1,21 @@
+<p>register works!</p>
+
+<form #registerForm="ngForm" novalidate (ngSubmit)='submit(registerForm.value)'> 
+    
+    <div>
+        <label class='form-label'> Name </label><br>
+        <input type=text id="name" ngModel name='name' value=''/>
+    </div>
+    
+    <div>
+        <label class='form-label'> Email </label><br>
+        <input type=email id="email" ngModel name='email' value=''/>
+    </div>
+    
+    <div>
+        <label class='form-label'> Password </label><br>
+        <input type=text id="password" ngModel name='password' value=''/>
+    </div>
+
+    <input type="submit" value="Submit">
+</form>
