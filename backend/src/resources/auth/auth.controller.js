@@ -87,7 +87,6 @@ export const verifyUser = async (req, res) => {
 
 //login route
 export const login = async (req, res) => {
-  // res.json({ msg: "Login" });
 
   //Input validation
   try {
