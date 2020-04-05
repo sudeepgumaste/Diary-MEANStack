@@ -2,24 +2,25 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { Register } from '../models/register.models';
+import { backendUrl } from '../config'
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type' : 'application/json'
   })
 }
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService {
-
-  authUrl:string = `http://localhost:5000/api/auth`
+export class RegisterService {
+  registerUrl:string = `${backendUrl}/auth/register`
 
   constructor(private http:HttpClient) { }
 
-  loginUser(login:any):Observable<any>{
-    const loginUrl = `${this.authUrl}/login`
-    return this.http.post<any>(loginUrl,login,httpOptions)
+  registerUser(register: Register):Observable<Register>{
+    return this.http.post<Register>(this.registerUrl,register,httpOptions)
   }
-
 }

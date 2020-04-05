@@ -1,7 +1,7 @@
 import Joi from "@hapi/joi";
 
 export const registerValidation = Joi.object().keys({
-  name: Joi.string()
+  username: Joi.string()
     .min(6)
     .required(),
   email: Joi.string()

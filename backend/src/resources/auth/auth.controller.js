@@ -49,7 +49,7 @@ export const register = async (req, res) => {
 
   //mail the token to user
   sendMail(req.body.email,'Verify your account', `<a href="http://127.0.0.1:3000/api/auth/verify/${verifyToken}">Verify</a>`)
-
+  res.json({msg:'Verification sent to your email'})
 };
 
 //verification route
