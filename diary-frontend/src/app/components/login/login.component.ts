@@ -24,7 +24,11 @@ export class LoginComponent implements OnInit {
     }
 
     this.loginService.loginUser(loginData).subscribe(
-      data=>console.log(data),
+      data=>{
+        console.log(data)
+        localStorage.setItem('accessToken', data.accessToken)
+        localStorage.setItem('refreshToken', data.refreshToken)
+      },
       error=>console.log(error)
     )
   }

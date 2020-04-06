@@ -20,7 +20,7 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
 
-  loginUser(login: Login):Observable<Login>{
+  loginUser(login: Login):Observable<any>{
     return this.http.post<Login>(this.loginUrl,login,httpOptions)
   }
 }
