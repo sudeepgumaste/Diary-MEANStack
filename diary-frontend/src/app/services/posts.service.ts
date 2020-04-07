@@ -38,4 +38,9 @@ export class PostsService {
     const url = `${this.postsUrl}/${id}`
     return this.http.patch<Post>(url, postData, httpOptions)
   }
+
+  deletePost(id: string): Observable<any> {
+    const url = `${this.postsUrl}/${id}`
+    return this.http.delete<Post>(url, httpOptions)
+  }
 }

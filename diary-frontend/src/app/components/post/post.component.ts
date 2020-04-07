@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PostDB } from 'src/app/models/post.model';
 
 import * as moment from 'moment';
@@ -13,6 +13,8 @@ export class PostComponent implements OnInit {
 
   @Input() post:PostDB;
 
+  @Output() deleteEvent:EventEmitter<string> = new EventEmitter();
+
   get formattedDate(){
     return moment(this.post.date).format('MMMM Do YYYY, h:mm:ss a');
   }
@@ -22,4 +24,7 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onDelete(){
+    this.deleteEvent.emit(this.post._id)
+  }
 }

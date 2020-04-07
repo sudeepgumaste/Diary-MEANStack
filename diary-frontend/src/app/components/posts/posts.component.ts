@@ -9,14 +9,14 @@ import { PostDB } from 'src/app/models/post.model';
 })
 export class PostsComponent implements OnInit {
 
-  constructor(private postsService : PostsService) { }
+  constructor(private postsService: PostsService) { }
 
-  postsData:PostDB[] = [{
-    _id:"Loading",
-    title:"Loading",
-    body:"Loading",
-    date:Date.now(),
-    userId:"Loading"
+  postsData: PostDB[] = [{
+    _id: "Loading",
+    title: "Loading",
+    body: "Loading",
+    date: Date.now(),
+    userId: "Loading"
   }]
 
   ngOnInit(): void {
@@ -30,4 +30,17 @@ export class PostsComponent implements OnInit {
     )
   }
 
+  onDelete(id: string) {
+    console.log(id);
+    // remove from db
+    this.postsService.deletePost(id).subscribe(
+      data => {
+        console.log(data);
+        // remove from UI
+        this.postsData = this.postsData.filter(
+          post => post._id !== id
+        )
+      }
+    )
+  }
 }
