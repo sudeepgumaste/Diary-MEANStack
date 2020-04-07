@@ -15,38 +15,38 @@ export class EditPostComponent implements OnInit {
   body: string;
   id: string;
 
-  constructor(private postsService:PostsService, 
-      private activatedRoute:ActivatedRoute,
-      private router:Router
-      ) { }
+  constructor(private postsService: PostsService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    if(this.activatedRoute.snapshot.params.id){
+    if (this.activatedRoute.snapshot.params.id) {
       this.id = this.activatedRoute.snapshot.params.id;
       this.postsService.fetchPostsById(this.id).subscribe(
-        data=>{
+        data => {
           this.title = data.title;
           this.body = data.body;
         },
-        error=>{
+        error => {
           console.log(error);
         }
       )
     }
   }
 
-  onSubmit(){
-    const postData: Post ={
+  onSubmit() {
+    const postData: Post = {
       title: this.title,
       body: this.body
     }
 
-    this.postsService.updatePost(postData,this.id).subscribe(
+    this.postsService.updatePost(postData, this.id).subscribe(
       data => {
         console.log(data);
         this.router.navigate(['posts'])
       },
-      err=>{
+      err => {
         console.log(err);
       }
     )

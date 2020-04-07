@@ -4,7 +4,7 @@ export class Post{
 }
 
 export class PostDB{
-    date: string;
+    date: number;
     _id: string;
     title: string;
     body: string;
