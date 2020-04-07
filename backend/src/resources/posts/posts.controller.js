@@ -49,3 +49,13 @@ export const deletePost = async (req, res) => {
     console.log(error);
   }
 };
+
+export const getPostById = async (req, res)=> {
+  try {
+    const post = await Post.findById(req.params.id);
+    res.json(post);
+  }catch(error){
+    res.sendStatus(500);
+    console.log(error);
+  }
+}

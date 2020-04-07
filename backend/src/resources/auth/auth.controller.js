@@ -37,7 +37,7 @@ export const register = async (req, res) => {
   //create an verify token to mail to users
   const verifyToken = jwt.sign(
     {
-      name: req.body.name,
+      username: req.body.username,
       email: req.body.email,
       password: hashedPassword
     },
@@ -47,8 +47,9 @@ export const register = async (req, res) => {
     }
   );
 
+  // console.log(verifyToken);
   //mail the token to user
-  sendMail(req.body.email,'Verify your account', `<a href="http://127.0.0.1:3000/api/auth/verify/${verifyToken}">Verify</a>`)
+  sendMail(req.body.email,'Verify your account', `<a href="${process.env.HOSTED_URL}/api/auth/verify/${verifyToken}">Verify</a>`)
   res.json({msg:'Verification sent to your email'})
 };
 
