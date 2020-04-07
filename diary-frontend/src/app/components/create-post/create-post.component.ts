@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../../services/posts.service';
+
 import { Post } from 'src/app/models/post.model';
 
 @Component({
@@ -12,13 +13,14 @@ export class CreatePostComponent implements OnInit {
   title: string;
   body: string;
 
-  constructor(private postsService:PostsService) { }
+  constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
+
   }
 
-  onSubmit(){
-    const postData: Post ={
+  onSubmit() {
+    const postData: Post = {
       title: this.title,
       body: this.body
     }
@@ -27,7 +29,7 @@ export class CreatePostComponent implements OnInit {
       data => {
         console.log(data);
       },
-      err=>{
+      err => {
         console.log(err.error);
       }
     )

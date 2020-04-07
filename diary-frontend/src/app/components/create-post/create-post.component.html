@@ -1,5 +1,7 @@
-<form (ngSubmit)="onSubmit()" >
-    <input type="text" name="title" [(ngModel)]="title"/>
-    <textarea type="body" name="body" [(ngModel)]="body"></textarea>
-    <button>Submit</button>
-</form>
+<div class="jumbotron">
+    <form (ngSubmit)="onSubmit()" >
+        <input type="text" name="title" [(ngModel)]="title" placeholder="Add a title..."/>
+        <textarea type="body" name="body" rows="18" [(ngModel)]="body" placeholder="Describe your day..." ></textarea>
+        <button class="btn btn-outline-info btn-block">Submit</button>
+    </form>
+</div>
