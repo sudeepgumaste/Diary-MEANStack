@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-9">
+      <small>{{ formattedDate }}</small>
+      <div class="">
+        <h5>{{ post.title }}</h5>
+        <p class="">
+          {{ post.body }}
+        </p>
+      </div>
+    </div>
+    <div class="col-md-3 d-flex justify-content-center align-items-center">
+        <div class="ml-auto text-center">
+          <a href="/posts/edit/{{ post._id }}" class="btn btn-outline-info mr-2">Edit</a>
+          <button class="btn btn-outline-danger">Remove</button>
+        </div>
+    </div>
+  </div>
+</div>
