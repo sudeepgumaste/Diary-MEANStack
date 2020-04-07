@@ -20,12 +20,22 @@ export class PostsService {
 
   constructor(private http: HttpClient) { }
 
-  fetchPosts():Observable<any>{
+  fetchPosts(): Observable<any> {
     return this.http.get(this.postsUrl, httpOptions)
+  }
+
+  fetchPostsById(id: string): Observable<any> {
+    const postUrl = `${this.postsUrl}/${id}`
+    return this.http.get(postUrl, httpOptions)
   }
 
   createPost(postData: Post): Observable<any> {
     const url = `${this.postsUrl}/create`
     return this.http.post<Post>(url, postData, httpOptions)
+  }
+
+  updatePost(postData: Post, id: string): Observable<any> {
+    const url = `${this.postsUrl}/${id}`
+    return this.http.patch<Post>(url, postData, httpOptions)
   }
 }
