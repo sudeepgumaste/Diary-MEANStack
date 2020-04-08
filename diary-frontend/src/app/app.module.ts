@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { PostComponent } from './components/post/post.component';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { AuthContainerComponent } from './components/layout/auth-container/auth-container.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     PostsComponent,
     NavbarComponent,
     PostComponent,
-    EditPostComponent
+    EditPostComponent,
+    AuthContainerComponent
   ],
   imports: [
     BrowserModule,
