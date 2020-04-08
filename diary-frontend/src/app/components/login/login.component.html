@@ -1,5 +1,5 @@
-<form (ngSubmit)="onSubmit()" >
-    <input type="email" name="email" [(ngModel)]="email"/>
-    <input type="password" name="password" [(ngModel)]="password"/>
-    <button>Submit</button>
+<form class="auth-form" (ngSubmit)="onSubmit()" >
+    <input type="email" name="email" [(ngModel)]="email" placeholder="email"/>
+    <input type="password" name="password" [(ngModel)]="password" placeholder="password"/>
+    <button class="btn btn-outline-info" >Submit</button>
 </form>

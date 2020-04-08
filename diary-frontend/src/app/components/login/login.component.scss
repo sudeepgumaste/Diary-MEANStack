@@ -1,0 +1,18 @@
+.auth-form{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    input{
+        margin-bottom: 3rem;
+        background: #000;
+        border-radius: 0.3rem;
+        border: solid 1px rgb(41, 40, 40);
+        color: #eee;
+        width: 100%;
+        padding: 0.5rem;
+        &:focus{
+            border: solid 1px #17a2b8;
+            outline: none;
+        }
+    }
+}

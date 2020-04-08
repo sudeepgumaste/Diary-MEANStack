@@ -15,6 +15,8 @@ import { PostComponent } from './components/post/post.component';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthContainerComponent } from './components/layout/auth-container/auth-container.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AuthContainerComponent } from './components/layout/auth-container/auth-
     NavbarComponent,
     PostComponent,
     EditPostComponent,
-    AuthContainerComponent
+    AuthContainerComponent,
+    LoginPageComponent,
+    RegisterPageComponent
   ],
   imports: [
     BrowserModule,
