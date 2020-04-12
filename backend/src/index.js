@@ -4,14 +4,17 @@ import process from "process";
 import { router } from "./router";
 import cors from "cors";
 import mongoose from "mongoose";
+import morgan from 'morgan';
+import fs from 'fs';
 
 //configuring environment
 dotenv.config();
-
 //create express app
 const app = express();
 
 app.use(cors());
+app.use(morgan('combined', {stream: fs.createWriteStream('./logs/requests.log', {flags: 'a'})}))
+app.use(morgan('combined'))
 
 //db connection
 mongoose.connect(
