@@ -34,7 +34,8 @@ export class PostsComponent implements OnInit, OnDestroy {
         this.postsData = data
       },
       err => {
-        console.log(err)
+        console.log(err);
+        window.location.reload()
       }
     )
   }

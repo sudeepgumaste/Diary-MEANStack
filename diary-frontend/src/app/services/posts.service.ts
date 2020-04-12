@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { Post, PostDB } from '../models/post.model';
+import { Post } from '../models/post.model';
 import { backendUrl } from '../config';
 
 const httpOptions = {

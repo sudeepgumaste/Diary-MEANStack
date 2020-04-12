@@ -1,5 +1,6 @@
 <nav class="navbar navbar-dark mb-5 sticky-top">
     <div class="container">
         <a class="navbar-brand text-info" href="#">Diary</a>
+        <button (click)="logout()" *ngIf="isAuthenticated" class="btn btn-outline-danger">Logout</button>
     </div>
 </nav>
