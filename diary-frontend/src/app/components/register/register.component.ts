@@ -9,26 +9,33 @@ import { RegisterService } from '../../services/register.service'
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  
-  email:string;
-  username:string;
-  password:string;
 
-  constructor(private registerService:RegisterService) { }
+  email: string;
+  username: string;
+  password: string;
+  message: string;
+  error: string;
+
+  constructor(private registerService: RegisterService) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    const data:Register = { 
+  onSubmit() {
+    const data: Register = {
       email: this.email,
       username: this.username,
       password: this.password
     }
 
     this.registerService.registerUser(data).subscribe(
-      data=>console.log(data),
-      err=>console.log(err.error)
+      data => {
+        this.message = data.msg;
+        this.error = '';
+      },
+      err => {
+        this.error = err.error.msg;
+      }
     )
   }
 

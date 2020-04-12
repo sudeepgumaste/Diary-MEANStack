@@ -1,5 +1,7 @@
 <form class="auth-form" (ngSubmit)="onSubmit()" >
+    <div *ngIf="error" class="alert">{{ error }}</div>
     <input type="email" name="email" [(ngModel)]="email" placeholder="email"/>
     <input type="password" name="password" [(ngModel)]="password" placeholder="password"/>
     <button class="btn btn-outline-info" >Submit</button>
+    <p>Don't have an account? <a href="/register">Register</a></p>
 </form>

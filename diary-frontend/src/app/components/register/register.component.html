@@ -1,6 +1,9 @@
 <form class="auth-form" (ngSubmit)="onSubmit()" >
-    <input type="email" name="email" [(ngModel)]="email" placeholder="email"/>
+    <div *ngIf="error" class="alert danger">{{ error }}</div>
+    <div *ngIf="message" class="alert success">{{ message }}</div>
     <input type="username" name="username" [(ngModel)]="username" placeholder="username"/>
+    <input type="email" name="email" [(ngModel)]="email" placeholder="email"/>
     <input type="password" name="password" [(ngModel)]="password" placeholder="password"/>
     <button class="btn btn-outline-info">Submit</button>
+    <p>Already have an account? <a href="/login">Login</a></p>
 </form>

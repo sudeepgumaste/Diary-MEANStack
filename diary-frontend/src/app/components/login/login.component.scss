@@ -15,4 +15,22 @@
             outline: none;
         }
     }
+
+    .alert{
+        background: none;
+        padding: 0.5rem;
+        border: 1px solid #dc3545;
+        color: #dc3545;
+    }
+
+    p{
+        margin-top: 1rem;
+        color: #17a2b8;
+
+        a{
+            color: #17a2b8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
 }
